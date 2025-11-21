@@ -107,15 +107,15 @@ getgenv().ExunysDeveloperAimbot = {
 		Sensitivity2 = 3.5, -- mousemoverel Sensitivity
 
 		LockMode = 1, -- 1 = CFrame; 2 = mousemoverel
-		LockPart = "UpperTorso", -- Body part to lock on
+		LockPart = "Head", -- Body part to lock on
 
 		TriggerKey = Enum.UserInputType.MouseButton2,
 		Toggle = false
 	},
 
 	FOVSettings = {
-		Enabled = true,
-		Visible = true,
+		Enabled = false,
+		Visible = false,
 
 		Radius = 90,
 		NumSides = 60,
@@ -137,6 +137,9 @@ getgenv().ExunysDeveloperAimbot = {
 }
 
 local Environment = getgenv().ExunysDeveloperAimbot
+
+setrenderproperty(Environment.FOVCircle, "Visible", false)
+setrenderproperty(Environment.FOVCircleOutline, "Visible", false)
 
 --// Core Functions
 
@@ -239,7 +242,7 @@ local Load = function()
 	ServiceConnections.RenderSteppedConnection = Connect(__index(RunService, Environment.DeveloperSettings.UpdateMode), function()
 		local OffsetToMoveDirection, LockPart = Settings.OffsetToMoveDirection, Settings.LockPart
 
-		if FOVSettings.Enabled and Settings.Enabled then
+		if FOVSettings.False and Settings.False then
 			for Index, Value in next, FOVSettings do
 				if Index == "Color" then
 					continue
