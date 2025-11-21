@@ -110,7 +110,7 @@ getgenv().ExunysDeveloperAimbot = {
 		LockPart = "Head", -- Body part to lock on
 
 		TriggerKey = Enum.UserInputType.MouseButton3,
-		Toggle = false
+		Toggle = true
 	},
 
 	FOVSettings = {
